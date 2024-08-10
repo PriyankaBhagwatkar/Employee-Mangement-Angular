@@ -1,0 +1,33 @@
+<div class="file-list-container">
+    <h1>Files for Employee ID: {{ empId }}</h1>
+  
+ 
+  
+    <table *ngIf="files.length > 0; else noFilesFound" class="file-table">
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>File Type</th>
+          <th>File Size (bytes)</th>
+          <th>Employee ID</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let file of files">
+          <td>{{ file.fileName }}</td>
+          <td>{{ file.fileType }}</td>
+          <td>{{ file.fileSize }}</td>
+          <td>{{ file.employeeId }}</td>
+          <td>
+            <button (click)="downloadFile(file.fileName)">Download</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <ng-template #noFilesFound>
+      <p>No files found.</p>
+    </ng-template>
+  </div>
+  

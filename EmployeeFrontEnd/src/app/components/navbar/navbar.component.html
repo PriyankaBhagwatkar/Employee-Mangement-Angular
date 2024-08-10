@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Employee Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown" (click)="isDropdownOpen = !isDropdownOpen">
+                <a class="nav-link dropdown-toggle"  id="employeeDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Employee
+                </a>
+                <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}" aria-labelledby="employeeDropdown">
+                    <a class="dropdown-item" routerLink="/add-employee">Add Employee</a>
+                   <!-- <a class="dropdown-item" routerLink="/edit-employee">Edit Employee</a>-->
+                    <a class="dropdown-item" routerLink="/view-employee">View All Employee</a>
+
+                    <a class="dropdown-item" routerLink="/upload">Upload File</a>
+                    <a class="dropdown-item" routerLink="/download-file">Download File</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

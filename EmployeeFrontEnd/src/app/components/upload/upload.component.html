@@ -1,0 +1,12 @@
+<div class="upload-container">
+    <h1>Upload File</h1>
+    <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+      <input type="file" formControlName="file" (change)="onFileChange($event)" required>
+      <input type="text" formControlName="empId" placeholder="Employee ID" required>
+      <button type="submit">Upload</button>
+    </form>
+    <div *ngIf="responseMessage" [ngStyle]="{'color': responseColor}">
+      {{ responseMessage }}
+    </div>
+  </div>
+  
